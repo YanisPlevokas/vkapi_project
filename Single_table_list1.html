@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your own graph</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+<div id="myDiv" style="width: 100%;"></div>
+<script language="JavaScript">
+    var trace1 = {
+      x: {% raw times %},
+      y: {% raw online_mobile %},
+      name: 'Your Online on mobile',
+      type: 'bar'
+    };
+
+    var trace2 = {
+      x: {% raw times %},
+      y: {% raw online %},
+      name: 'Your Online on PC',
+      type: 'bar'
+    };
+
+    var data = [trace1, trace2];
+
+    var layout = {
+     title: 'Ваш график онлайна в вконтакте ',
+    barmode: 'group'};
+
+    Plotly.newPlot('myDiv', data, layout);
+
+</script>
+</body>
+</html>

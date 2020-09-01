@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+<div id="myDiv" style="width: 100%;"></div>
+<script language="JavaScript">
+    trace1 = {
+      type: 'scatter',
+      x: {% raw times %},
+      y: {% raw online_total %},
+      mode: 'lines',
+      name: 'Total online',
+      line: {
+        color: 'rgb(219, 64, 82)',
+        width: 3
+      }
+    };
+
+    trace2 = {
+      type: 'scatter',
+      x: {% raw times %},
+      y: {% raw online_pc %},
+      mode: 'lines',
+      name: 'Online PC',
+      line: {
+        color: 'rgb(55, 128, 191)',
+        width: 1
+      }
+    };
+    trace3 = {
+      type: 'scatter',
+      x: {% raw times %},
+      y: {% raw online_mobile %},
+      mode: 'lines',
+      name: 'Online Mobile',
+      line: {
+        color: 'green',
+        width: 1
+      }
+    };
+    var layout = {
+      height: 500
+    };
+
+    var data = [trace1, trace2, trace3];
+
+    Plotly.newPlot('myDiv', data, layout);
+
+</script>
+</body>
+</html>
