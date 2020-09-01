@@ -5,7 +5,7 @@ import time
 import requests
 from pymongo import MongoClient
 
-client = MongoClient('mongodb://Yanis:1337@ds163679.mlab.com:63679/for_project')
+client = MongoClient(HIDDEN)
 db = client['for_project']
 
 class MainHandler(tornado.web.RequestHandler):
