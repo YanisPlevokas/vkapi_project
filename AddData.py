@@ -3,7 +3,7 @@ from pymongo import MongoClient
 import json, requests
 while True:
     try:
-        client = MongoClient('mongodb://Yanis:1337@ds163679.mlab.com:63679/for_project')
+        client = MongoClient(HIDDEN)
         db = client['for_project']
         request1 = "https://api.vk.com/method/groups.getMembers?group_id=62351504&v=5.23&count=1000&fields=online,online_mobile"
         f=time.strftime("%Y-%m-%d %H:%M:%S")
